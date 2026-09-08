@@ -3,7 +3,10 @@
 A working demo of **Tune2This**, the label/artist-platform side of **City Lights Recording
 Studio**, 1299 Highway 33 West, Farmingdale NJ.
 
-Static HTML, no framework, no backend. Everything runs from GitHub Pages.
+Static HTML, no framework, no backend. Runs from any static host — GitHub Pages, Netlify,
+or a folder on disk.
+
+**Status:** committed locally, not yet pushed to a remote.
 
 > **This is a demo, not a storefront.** No payments are processed anywhere. Forms have no
 > backend and say so when submitted. No card, bank or personal data is collected.
