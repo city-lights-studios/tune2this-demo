@@ -1,0 +1,74 @@
+TITLE: Log in — Tune2This
+DESC: Log in to Tune2This as a member or as an artist.
+NAV: login
+---
+
+<section class="page-head">
+  <div class="wrap center">
+    <p class="eyebrow eyebrow--plain" style="justify-content:center">Log in</p>
+    <h1 style="margin-inline:auto">Welcome back.</h1>
+    <p class="lede mt-md" style="margin-inline:auto">How do you want to sign in?</p>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="choose">
+
+      <a class="choice choice--fan" href="#member-login">
+        <span class="choice__media">
+          <img src="img/city-lights-recording-studio-lounge-cathedral-ceiling-wide-768w.webp" alt="" loading="lazy" decoding="async">
+        </span>
+        <span class="choice__body">
+          <span class="choice__kicker">Fans &amp; members</span>
+          <span class="choice__title">Member login</span>
+          <span class="choice__desc">Your library, playlists, tips, boards, and subscription.</span>
+          <span class="choice__cta">Sign in as a member</span>
+        </span>
+      </a>
+
+      <a class="choice choice--artist" href="#artist-login">
+        <span class="choice__media">
+          <img src="img/city-lights-recording-studio-engineer-analog-mixing-console-768w.webp" alt="" loading="lazy" decoding="async">
+        </span>
+        <span class="choice__body">
+          <span class="choice__kicker">Roster artists</span>
+          <span class="choice__title">Artist login</span>
+          <span class="choice__desc">Your storefront, uploads, splits, payouts, and fan feed.</span>
+          <span class="choice__cta">Sign in as an artist</span>
+        </span>
+      </a>
+
+    </div>
+
+    <div class="split mt-lg" style="align-items:start">
+      <form class="form" id="member-login" data-demo-form>
+        <p class="footer-h">Member sign in</p>
+        <div class="field"><label for="m-email">Email</label><input id="m-email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="m-pass">Password</label><input id="m-pass" type="password" autocomplete="current-password" required></div>
+        <button class="btn" type="submit">Log in</button>
+        <p class="form-msg" data-demo-form-message hidden>Demo build &mdash; no accounts exist and nothing is submitted. No password is stored or transmitted.</p>
+      </form>
+
+      <form class="form" id="artist-login" data-demo-form>
+        <p class="footer-h">Artist sign in</p>
+        <div class="field"><label for="a-email2">Email</label><input id="a-email2" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="a-pass">Password</label><input id="a-pass" type="password" autocomplete="current-password" required></div>
+        <button class="btn btn--neon" type="submit">Log in</button>
+        <p class="form-msg" data-demo-form-message hidden>Demo build &mdash; no accounts exist and nothing is submitted. No password is stored or transmitted.</p>
+      </form>
+    </div>
+
+    <p class="center mt-lg dim">
+      New here? <a class="hl" href="join.html" style="text-decoration:none">Join Tune2This</a>.
+    </p>
+
+    <div class="note mt-lg">
+      <strong>Security note</strong>
+      This demo never asks for or stores a real password. When this is built for real, sign-in
+      should use hashed credentials over HTTPS (or a hosted identity provider), and member and
+      artist accounts should share one identity system so the City Lights studio discount can be
+      verified without a second login.
+    </div>
+  </div>
+</section>

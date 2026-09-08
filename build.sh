@@ -4,8 +4,8 @@
 #
 # Every page lives in src/<name>.html as a body fragment with a small metadata
 # block at the top. This script wraps each fragment in the shared <head>,
-# header, persistent player and footer, and writes <name>.html to the repo
-# root so GitHub Pages can serve it directly.
+# header (with dropdown nav + Join/Log in), footer and persistent player, and
+# writes <name>.html to the repo root so any static host can serve it.
 #
 #   bash build.sh
 #
@@ -15,18 +15,14 @@ set -euo pipefail
 cd "$(dirname "$0")"
 
 SITE_NAME="Tune2This"
+SITE_MOTTO="Where decisions are made by real music industry professionals"
 SITE_TAG="Brought to you by City Lights Recording Studio"
 SITE_URL="https://example.github.io/tune2this-demo"   # replace once the domain is live
 
-# --- nav definition: slug|label -------------------------------------------
-NAV_ITEMS=(
-  "artists|Artists"
-  "videos|Videos"
-  "radio|Radio"
-  "news|News"
-  "studio|The Studio"
-  "membership|Membership"
-)
+CL_YT="https://www.youtube.com/@guydaniel1299/videos"
+GDVO_YT="https://www.youtube.com/@thegdvo2762"
+CL_FB="https://www.facebook.com/CityLightsRecordingStudio/"
+CL_IG="https://www.instagram.com/guy_daniel_city_lights/"
 
 logo_svg() {
 cat <<'SVG'
@@ -43,38 +39,23 @@ cat <<'SVG'
 SVG
 }
 
-nav_html() {
-  local current="$1" out="" slug label aria
-  for item in "${NAV_ITEMS[@]}"; do
-    slug="${item%%|*}"; label="${item##*|}"
-    aria=""
-    [ "$slug" = "$current" ] && aria=' aria-current="page"'
-    out+="        <a href=\"${slug}.html\"${aria}>${label}</a>"$'\n'
-  done
-  printf '%s' "$out"
-}
-
-footer_nav_html() {
-  local out="" slug label
-  for item in "${NAV_ITEMS[@]}"; do
-    slug="${item%%|*}"; label="${item##*|}"
-    out+="            <li><a href=\"${slug}.html\">${label}</a></li>"$'\n'
-  done
-  printf '%s' "$out"
-}
+# The header nav is authored inline below (dropdowns need per-item markup).
+# The `current` argument lets a page mark its own top-level item.
 
 build_page() {
   local src="$1"
   local slug; slug="$(basename "$src" .html)"
 
-  # metadata block: lines of KEY: value, terminated by ---
-  local title desc current hero_class
+  local title desc current
   title="$(sed -n 's/^TITLE: //p' "$src" | head -1)"
   desc="$(sed -n 's/^DESC: //p' "$src" | head -1)"
   current="$(sed -n 's/^NAV: //p' "$src" | head -1)"
   [ -z "$current" ] && current="$slug"
 
   local body; body="$(sed '1,/^---$/d' "$src")"
+
+  # helper: emit aria-current if this dropdown/link owns the page
+  cur() { [ "$1" = "$current" ] && printf ' aria-current="page"'; }
 
   {
   cat <<HEAD
@@ -105,7 +86,7 @@ build_page() {
 
 <header class="site-header">
   <div class="wrap site-header__inner">
-    <a class="brand" href="index.html">
+    <a class="brand" href="index.html" aria-label="Tune2This home">
       $(logo_svg)
       <span class="brand__text">
         <span class="brand__name">Tune<span class="brand__two">2</span>This</span>
@@ -116,11 +97,52 @@ build_page() {
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
 
     <nav class="nav" id="primary-nav" aria-label="Primary">
-$(nav_html "$current")    </nav>
+      <details class="drop"$(cur artists)>
+        <summary>Artists</summary>
+        <div class="drop__panel">
+          <a href="artists.html">All artists</a>
+          <a href="artist-gdvo.html">The GDVO</a>
+          <a href="for-artists.html">Submit your music</a>
+        </div>
+      </details>
 
-    <div class="header-cta">
-      <a class="btn btn--sm" href="membership.html">Join free</a>
-    </div>
+      <details class="drop"$(cur music)>
+        <summary>Music</summary>
+        <div class="drop__panel">
+          <a href="radio.html">Radio</a>
+          <a href="charts.html">Charts</a>
+          <a href="artist-gdvo.html#buy">Store</a>
+        </div>
+      </details>
+
+      <a class="nav__link" href="videos.html"$(cur videos)>Videos</a>
+      <a class="nav__link" href="charts.html"$(cur charts)>Charts</a>
+      <a class="nav__link" href="news.html"$(cur news)>News</a>
+
+      <details class="drop"$(cur studio)>
+        <summary>The Studio</summary>
+        <div class="drop__panel">
+          <a href="studio.html">The room</a>
+          <a href="studio.html#gear">Gear</a>
+          <a href="studio.html#credits">Credits</a>
+          <a href="studio.html#book">Book a session</a>
+        </div>
+      </details>
+
+      <details class="drop"$(cur membership)>
+        <summary>Members</summary>
+        <div class="drop__panel">
+          <a href="membership.html">Why join</a>
+          <a href="membership.html#tiers">Subscription tiers</a>
+          <a href="membership.html#tipping">Tipping &amp; boards</a>
+        </div>
+      </details>
+
+      <div class="nav__cta">
+        <a class="btn btn--sm btn--ghost" href="login.html">Log in</a>
+        <a class="btn btn--sm" href="join.html">Join</a>
+      </div>
+    </nav>
   </div>
 </header>
 
@@ -144,14 +166,21 @@ HEAD
           </span>
         </a>
         <p class="footer-blurb">A record label, artist platform and fan club built on Route 33 in Farmingdale, New Jersey &mdash; out of a room that has been recording since 1989.</p>
+        <p class="footer-motto">&ldquo;${SITE_MOTTO}.&rdquo;</p>
         <p class="footer-note">${SITE_TAG}</p>
       </div>
 
       <div>
         <p class="footer-h">Explore</p>
         <ul class="footer-list">
-$(footer_nav_html)            <li><a href="for-artists.html">For artists</a></li>
-            <li><a href="contact.html">Contact</a></li>
+          <li><a href="artists.html">Artists</a></li>
+          <li><a href="radio.html">Radio</a></li>
+          <li><a href="charts.html">Charts</a></li>
+          <li><a href="videos.html">Videos</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="membership.html">Membership</a></li>
+          <li><a href="for-artists.html">For artists</a></li>
+          <li><a href="join.html">Join</a> &middot; <a href="login.html">Log in</a></li>
         </ul>
       </div>
 
@@ -166,8 +195,10 @@ $(footer_nav_html)            <li><a href="for-artists.html">For artists</a></li
         </address>
         <p class="footer-h" style="margin-top:1.75rem">Follow</p>
         <ul class="footer-list footer-list--inline">
-          <li><a href="https://www.facebook.com/CityLightsRecordingStudio/" rel="noopener">Facebook</a></li>
-          <li><a href="https://www.instagram.com/guy_daniel_city_lights/" rel="noopener">Instagram</a></li>
+          <li><a href="${CL_YT}" rel="noopener">City Lights YouTube</a></li>
+          <li><a href="${GDVO_YT}" rel="noopener">GDVO YouTube</a></li>
+          <li><a href="${CL_FB}" rel="noopener">Facebook</a></li>
+          <li><a href="${CL_IG}" rel="noopener">Instagram</a></li>
         </ul>
       </div>
     </div>

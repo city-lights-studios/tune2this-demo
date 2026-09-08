@@ -25,7 +25,7 @@
 
 <header class="site-header">
   <div class="wrap site-header__inner">
-    <a class="brand" href="index.html">
+    <a class="brand" href="index.html" aria-label="Tune2This home">
       <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
   <rect x="0.75" y="0.75" width="38.5" height="38.5" rx="7" fill="#111114" stroke="#F5C518" stroke-width="1.5"/>
   <path d="M20 6 L33 34 H7 Z" fill="#1A1A1F"/>
@@ -45,16 +45,52 @@
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
 
     <nav class="nav" id="primary-nav" aria-label="Primary">
-        <a href="artists.html" aria-current="page">Artists</a>
-        <a href="videos.html">Videos</a>
-        <a href="radio.html">Radio</a>
-        <a href="news.html">News</a>
-        <a href="studio.html">The Studio</a>
-        <a href="membership.html">Membership</a>    </nav>
+      <details class="drop" aria-current="page">
+        <summary>Artists</summary>
+        <div class="drop__panel">
+          <a href="artists.html">All artists</a>
+          <a href="artist-gdvo.html">The GDVO</a>
+          <a href="for-artists.html">Submit your music</a>
+        </div>
+      </details>
 
-    <div class="header-cta">
-      <a class="btn btn--sm" href="membership.html">Join free</a>
-    </div>
+      <details class="drop">
+        <summary>Music</summary>
+        <div class="drop__panel">
+          <a href="radio.html">Radio</a>
+          <a href="charts.html">Charts</a>
+          <a href="artist-gdvo.html#buy">Store</a>
+        </div>
+      </details>
+
+      <a class="nav__link" href="videos.html">Videos</a>
+      <a class="nav__link" href="charts.html">Charts</a>
+      <a class="nav__link" href="news.html">News</a>
+
+      <details class="drop">
+        <summary>The Studio</summary>
+        <div class="drop__panel">
+          <a href="studio.html">The room</a>
+          <a href="studio.html#gear">Gear</a>
+          <a href="studio.html#credits">Credits</a>
+          <a href="studio.html#book">Book a session</a>
+        </div>
+      </details>
+
+      <details class="drop">
+        <summary>Members</summary>
+        <div class="drop__panel">
+          <a href="membership.html">Why join</a>
+          <a href="membership.html#tiers">Subscription tiers</a>
+          <a href="membership.html#tipping">Tipping &amp; boards</a>
+        </div>
+      </details>
+
+      <div class="nav__cta">
+        <a class="btn btn--sm btn--ghost" href="login.html">Log in</a>
+        <a class="btn btn--sm" href="join.html">Join</a>
+      </div>
+    </nav>
   </div>
 </header>
 
@@ -217,9 +253,15 @@
 <!-- =============================================================== video -->
 <section class="section">
   <div class="wrap">
-    <div class="section__head reveal">
-      <p class="eyebrow">Video</p>
-      <h2>Peace &mdash; the video</h2>
+    <div class="section__head section__head--split reveal">
+      <div>
+        <p class="eyebrow">Video</p>
+        <h2>Peace &mdash; the video</h2>
+      </div>
+      <a class="channel-btn" href="https://www.youtube.com/@thegdvo2762" rel="noopener" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="4" fill="#E2552F"/><path d="M10 8.5v7l6-3.5-6-3.5z" fill="#fff"/></svg>
+        <span>The GDVO on YouTube<small>@thegdvo2762</small></span>
+      </a>
     </div>
     <div class="embed embed--video reveal">
       <iframe
@@ -344,19 +386,21 @@
           </span>
         </a>
         <p class="footer-blurb">A record label, artist platform and fan club built on Route 33 in Farmingdale, New Jersey &mdash; out of a room that has been recording since 1989.</p>
+        <p class="footer-motto">&ldquo;Where decisions are made by real music industry professionals.&rdquo;</p>
         <p class="footer-note">Brought to you by City Lights Recording Studio</p>
       </div>
 
       <div>
         <p class="footer-h">Explore</p>
         <ul class="footer-list">
-            <li><a href="artists.html">Artists</a></li>
-            <li><a href="videos.html">Videos</a></li>
-            <li><a href="radio.html">Radio</a></li>
-            <li><a href="news.html">News</a></li>
-            <li><a href="studio.html">The Studio</a></li>
-            <li><a href="membership.html">Membership</a></li>            <li><a href="for-artists.html">For artists</a></li>
-            <li><a href="contact.html">Contact</a></li>
+          <li><a href="artists.html">Artists</a></li>
+          <li><a href="radio.html">Radio</a></li>
+          <li><a href="charts.html">Charts</a></li>
+          <li><a href="videos.html">Videos</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="membership.html">Membership</a></li>
+          <li><a href="for-artists.html">For artists</a></li>
+          <li><a href="join.html">Join</a> &middot; <a href="login.html">Log in</a></li>
         </ul>
       </div>
 
@@ -371,6 +415,8 @@
         </address>
         <p class="footer-h" style="margin-top:1.75rem">Follow</p>
         <ul class="footer-list footer-list--inline">
+          <li><a href="https://www.youtube.com/@guydaniel1299/videos" rel="noopener">City Lights YouTube</a></li>
+          <li><a href="https://www.youtube.com/@thegdvo2762" rel="noopener">GDVO YouTube</a></li>
           <li><a href="https://www.facebook.com/CityLightsRecordingStudio/" rel="noopener">Facebook</a></li>
           <li><a href="https://www.instagram.com/guy_daniel_city_lights/" rel="noopener">Instagram</a></li>
         </ul>

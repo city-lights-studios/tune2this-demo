@@ -30,6 +30,25 @@
     syncNav();
   }
 
+  /* ---- header dropdowns: only one open at a time, close on outside click ---- */
+  var drops = Array.prototype.slice.call(document.querySelectorAll('.nav .drop'));
+  if (drops.length) {
+    drops.forEach(function (d) {
+      d.addEventListener('toggle', function () {
+        if (!d.open) return;
+        drops.forEach(function (o) { if (o !== d) o.open = false; });
+      });
+    });
+    document.addEventListener('click', function (e) {
+      if (e.target.closest && e.target.closest('.nav .drop')) return;
+      if (window.matchMedia('(max-width: 1160px)').matches) return; // mobile: leave expanded
+      drops.forEach(function (d) { d.open = false; });
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') drops.forEach(function (d) { d.open = false; });
+    });
+  }
+
   /* ---- reveal on scroll ---- */
   var targets = document.querySelectorAll('.reveal');
   if (targets.length && 'IntersectionObserver' in window) {
@@ -92,5 +111,10 @@
   /* ---- footer year ---- */
   Array.prototype.forEach.call(document.querySelectorAll('[data-year]'), function (el) {
     el.textContent = new Date().getFullYear();
+  });
+
+  /* ---- charts: current week label ---- */
+  Array.prototype.forEach.call(document.querySelectorAll('[data-week]'), function (el) {
+    el.textContent = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
   });
 })();

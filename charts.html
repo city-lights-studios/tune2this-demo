@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Videos | Tune2This</title>
-<meta name="description" content="Music videos, session footage and the room itself — filmed at City Lights Recording Studio on Route 33 in Farmingdale, New Jersey.">
-<link rel="canonical" href="https://example.github.io/tune2this-demo/videos.html">
+<title>Charts | Tune2This</title>
+<meta name="description" content="The Tune2This chart — what fans are playing, buying and tipping this week, counted from the room on Route 33.">
+<link rel="canonical" href="https://example.github.io/tune2this-demo/charts.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Tune2This">
-<meta property="og:title" content="Videos | Tune2This">
-<meta property="og:description" content="Music videos, session footage and the room itself — filmed at City Lights Recording Studio on Route 33 in Farmingdale, New Jersey.">
+<meta property="og:title" content="Charts | Tune2This">
+<meta property="og:description" content="The Tune2This chart — what fans are playing, buying and tipping this week, counted from the room on Route 33.">
 <meta property="og:image" content="https://example.github.io/tune2this-demo/img/city-lights-recording-studio-led-sign-route-33-farmingdale-nj-1024w.webp">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0A0A0B">
@@ -63,8 +63,8 @@
         </div>
       </details>
 
-      <a class="nav__link" href="videos.html" aria-current="page">Videos</a>
-      <a class="nav__link" href="charts.html">Charts</a>
+      <a class="nav__link" href="videos.html">Videos</a>
+      <a class="nav__link" href="charts.html" aria-current="page">Charts</a>
       <a class="nav__link" href="news.html">News</a>
 
       <details class="drop">
@@ -98,22 +98,12 @@
 
 <section class="page-head">
   <div class="wrap">
-    <p class="eyebrow">Video</p>
-    <h1>Sessions, rooms, and a sign on Route 33.</h1>
+    <p class="eyebrow">Charts</p>
+    <h1>Counted from the room, not from an algorithm.</h1>
     <p class="lede">
-      Official artist videos play from the rights holder&rsquo;s channel. Everything else was shot
-      inside the building.
+      The Tune2This chart ranks by a blend of plays, downloads and tips &mdash; so backing an
+      artist with your wallet actually moves them, not just your headphones.
     </p>
-    <div class="channel-btns mt-md">
-      <a class="channel-btn" href="https://www.youtube.com/@thegdvo2762" rel="noopener" target="_blank">
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="4" fill="#E2552F"/><path d="M10 8.5v7l6-3.5-6-3.5z" fill="#fff"/></svg>
-        <span>The GDVO on YouTube<small>@thegdvo2762</small></span>
-      </a>
-      <a class="channel-btn" href="https://www.youtube.com/@guydaniel1299/videos" rel="noopener" target="_blank">
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="4" fill="#F5C518"/><path d="M10 8.5v7l6-3.5-6-3.5z" fill="#0A0A0B"/></svg>
-        <span>City Lights on YouTube<small>@guydaniel1299</small></span>
-      </a>
-    </div>
   </div>
 </section>
 
@@ -121,91 +111,94 @@
 
 <section class="section">
   <div class="wrap">
-    <p class="eyebrow reveal">Artist video</p>
-    <h2 class="reveal">The GDVO &mdash; Peace (The Instant Philly Funk Mix)</h2>
-    <div class="embed embed--video mt-md reveal">
-      <iframe
-        src="https://www.youtube-nocookie.com/embed/p9ZGvty5-Ro"
-        title="Peace by The GDVO (The Instant Philly Funk Mix)"
-        frameborder="0" loading="lazy"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen></iframe>
-    </div>
+    <div class="rail-layout">
+      <div>
+        <div class="section__head section__head--split reveal">
+          <div>
+            <p class="eyebrow eyebrow--plain">This week</p>
+            <h2>The Route 33 Top &nbsp;·&nbsp; week of <span data-week>—</span></h2>
+          </div>
+          <button class="btn btn--ghost btn--sm" type="button"
+                  data-track-play="gdvo-peace-philly-funk"
+                  data-track-queue="gdvo-peace-philly-funk,gdvo-peace-original">Play the chart</button>
+        </div>
 
-    <div class="cards mt-lg reveal" style="grid-template-columns:repeat(auto-fit,minmax(320px,1fr))">
-      <div class="embed embed--video">
-        <iframe
-          src="https://www.youtube-nocookie.com/embed/eRzjMJw3BNo"
-          title="Peace by GDVO featuring The Chi-Lites and Denroy Morgan"
-          frameborder="0" loading="lazy"
-          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
+        <ol class="chart reveal">
+          <li class="chart__row" data-track-row="gdvo-peace-philly-funk">
+            <span class="chart__pos">1</span>
+            <span class="chart__art"><img src="img/city-lights-recording-studio-owner-at-neve-console-480w.webp" alt=""></span>
+            <span class="chart__title">Peace (The Instant Philly Funk Mix)<span class="chart__by">The GDVO</span></span>
+            <span class="chart__move chart__move--new">NEW</span>
+            <button class="chart__play" type="button"
+                    data-track-play="gdvo-peace-philly-funk"
+                    data-track-queue="gdvo-peace-philly-funk,gdvo-peace-original"
+                    aria-label="Play Peace (The Instant Philly Funk Mix)">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7L8 5z" fill="currentColor"/></svg>
+            </button>
+          </li>
+          <li class="chart__row" data-track-row="gdvo-peace-original">
+            <span class="chart__pos">2</span>
+            <span class="chart__art"><img src="img/city-lights-recording-studio-control-room-wide-neve-vr60-480w.webp" alt=""></span>
+            <span class="chart__title">Peace <span class="faint">(feat. The Chi-Lites &amp; Denroy Morgan)</span><span class="chart__by">The GDVO</span></span>
+            <span class="chart__move chart__move--up">▲ 1</span>
+            <button class="chart__play" type="button"
+                    data-track-play="gdvo-peace-original"
+                    data-track-queue="gdvo-peace-philly-funk,gdvo-peace-original"
+                    aria-label="Play Peace featuring The Chi-Lites and Denroy Morgan">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7L8 5z" fill="currentColor"/></svg>
+            </button>
+          </li>
+          <li class="chart__row" style="opacity:.5">
+            <span class="chart__pos">3</span>
+            <span class="chart__art" style="display:grid;place-items:center;color:var(--text-faint)">
+              <svg viewBox="0 0 24 24" style="width:18px;height:18px"><path d="M12 6v12M6 12h12" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+            </span>
+            <span class="chart__title faint">Open position<span class="chart__by">Waiting on a roster release</span></span>
+            <span class="chart__move"></span>
+            <span></span>
+          </li>
+          <li class="chart__row" style="opacity:.5">
+            <span class="chart__pos">4</span>
+            <span class="chart__art" style="display:grid;place-items:center;color:var(--text-faint)">
+              <svg viewBox="0 0 24 24" style="width:18px;height:18px"><path d="M12 6v12M6 12h12" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+            </span>
+            <span class="chart__title faint">Open position<span class="chart__by">Waiting on a roster release</span></span>
+            <span class="chart__move"></span>
+            <span></span>
+          </li>
+          <li class="chart__row" style="opacity:.5">
+            <span class="chart__pos">5</span>
+            <span class="chart__art" style="display:grid;place-items:center;color:var(--text-faint)">
+              <svg viewBox="0 0 24 24" style="width:18px;height:18px"><path d="M12 6v12M6 12h12" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+            </span>
+            <span class="chart__title faint">Open position<span class="chart__by">Waiting on a roster release</span></span>
+            <span class="chart__move"></span>
+            <span></span>
+          </li>
+        </ol>
+
+        <div class="note mt-lg reveal">
+          <strong>How the chart will be counted</strong>
+          Plays, paid downloads and tip dollars, weighted so money counts for more than a
+          passive play &mdash; that is what makes it different from a streaming chart. It fills
+          out as the roster does. Positions 3 and below are shown open rather than padded.
+        </div>
       </div>
-      <div class="embed embed--video">
-        <iframe
-          src="https://www.youtube-nocookie.com/embed/sa30EU28afE"
-          title="The Chi-Lites and Denroy Morgan — Peace (The Instant Philly Funk Mix)"
-          frameborder="0" loading="lazy"
-          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="section section--raise section--line">
-  <div class="wrap">
-    <div class="section__head reveal">
-      <p class="eyebrow">From the building</p>
-      <h2>Inside City Lights</h2>
-      <p class="lede">Shot on Route 33. These are the studio&rsquo;s own clips, encoded for the web.</p>
-    </div>
-
-    <div class="cards cards--3 reveal">
-      <figure class="video-frame">
-        <video src="video/city-lights-recording-studio-live-room-pan.mp4"
-               poster="video/city-lights-recording-studio-live-room-pan-poster.jpg"
-               controls preload="none" playsinline></video>
-        <figcaption class="figure" style="padding:.85rem 1rem 1rem"><span class="faint" style="font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase">The live room</span></figcaption>
-      </figure>
-      <figure class="video-frame">
-        <video src="video/city-lights-recording-studio-bass-tracking-detail.mp4"
-               poster="video/city-lights-recording-studio-bass-tracking-detail-poster.jpg"
-               controls preload="none" playsinline></video>
-        <figcaption class="figure" style="padding:.85rem 1rem 1rem"><span class="faint" style="font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase">Bass tracking</span></figcaption>
-      </figure>
-      <figure class="video-frame">
-        <video src="video/city-lights-recording-studio-acoustic-guitar-tracking.mp4"
-               poster="video/city-lights-recording-studio-acoustic-guitar-tracking-poster.jpg"
-               controls preload="none" playsinline></video>
-        <figcaption class="figure" style="padding:.85rem 1rem 1rem"><span class="faint" style="font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase">Acoustic overdub</span></figcaption>
-      </figure>
-      <figure class="video-frame">
-        <video src="video/city-lights-recording-studio-bass-session-highlight.mp4"
-               poster="video/city-lights-recording-studio-bass-session-highlight-poster.jpg"
-               controls preload="none" playsinline></video>
-        <figcaption class="figure" style="padding:.85rem 1rem 1rem"><span class="faint" style="font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase">Session highlight</span></figcaption>
-      </figure>
-      <figure class="video-frame">
-        <video src="video/city-lights-recording-studio-led-sign-messages.mp4"
-               poster="video/city-lights-recording-studio-led-sign-messages-poster.jpg"
-               muted loop playsinline controls preload="none"></video>
-        <figcaption class="figure" style="padding:.85rem 1rem 1rem"><span class="faint" style="font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase">The sign on Route 33</span></figcaption>
-      </figure>
-      <figure class="video-frame">
-        <video src="video/city-lights-recording-studio-led-sign-snow-loop.mp4"
-               poster="video/city-lights-recording-studio-led-sign-snow-loop-poster.jpg"
-               muted loop playsinline controls preload="none"></video>
-        <figcaption class="figure" style="padding:.85rem 1rem 1rem"><span class="faint" style="font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase">The sign, in snow</span></figcaption>
-      </figure>
-    </div>
-
-    <div class="note mt-lg reveal">
-      <strong>Held back</strong>
-      Two more clips exist and are deliberately not on this page. One is a hallway pan showing
-      framed posters including a Danny Aiello poster; the other shows an identifiable woodwind
-      player. Both need Guy&rsquo;s sign-off, and the player&rsquo;s permission, before they go
-      anywhere public.
+      <aside class="adrail reveal" aria-label="Advertising">
+        <div class="ad">
+          <div>
+            <span class="ad__label">Advertisement</span>
+            <p class="ad__note">300 &times; 250 ad slot. Sold to labels, gear brands and local venues.</p>
+          </div>
+        </div>
+        <div class="ad">
+          <div>
+            <span class="ad__label">Advertisement</span>
+            <p class="ad__note">House slot &mdash; promote a release, an event, or studio time.</p>
+          </div>
+        </div>
+      </aside>
     </div>
   </div>
 </section>

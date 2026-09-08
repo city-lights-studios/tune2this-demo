@@ -25,7 +25,7 @@
 
 <header class="site-header">
   <div class="wrap site-header__inner">
-    <a class="brand" href="index.html">
+    <a class="brand" href="index.html" aria-label="Tune2This home">
       <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
   <rect x="0.75" y="0.75" width="38.5" height="38.5" rx="7" fill="#111114" stroke="#F5C518" stroke-width="1.5"/>
   <path d="M20 6 L33 34 H7 Z" fill="#1A1A1F"/>
@@ -45,16 +45,52 @@
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
 
     <nav class="nav" id="primary-nav" aria-label="Primary">
-        <a href="artists.html">Artists</a>
-        <a href="videos.html">Videos</a>
-        <a href="radio.html">Radio</a>
-        <a href="news.html">News</a>
-        <a href="studio.html">The Studio</a>
-        <a href="membership.html">Membership</a>    </nav>
+      <details class="drop">
+        <summary>Artists</summary>
+        <div class="drop__panel">
+          <a href="artists.html">All artists</a>
+          <a href="artist-gdvo.html">The GDVO</a>
+          <a href="for-artists.html">Submit your music</a>
+        </div>
+      </details>
 
-    <div class="header-cta">
-      <a class="btn btn--sm" href="membership.html">Join free</a>
-    </div>
+      <details class="drop">
+        <summary>Music</summary>
+        <div class="drop__panel">
+          <a href="radio.html">Radio</a>
+          <a href="charts.html">Charts</a>
+          <a href="artist-gdvo.html#buy">Store</a>
+        </div>
+      </details>
+
+      <a class="nav__link" href="videos.html">Videos</a>
+      <a class="nav__link" href="charts.html">Charts</a>
+      <a class="nav__link" href="news.html">News</a>
+
+      <details class="drop">
+        <summary>The Studio</summary>
+        <div class="drop__panel">
+          <a href="studio.html">The room</a>
+          <a href="studio.html#gear">Gear</a>
+          <a href="studio.html#credits">Credits</a>
+          <a href="studio.html#book">Book a session</a>
+        </div>
+      </details>
+
+      <details class="drop">
+        <summary>Members</summary>
+        <div class="drop__panel">
+          <a href="membership.html">Why join</a>
+          <a href="membership.html#tiers">Subscription tiers</a>
+          <a href="membership.html#tipping">Tipping &amp; boards</a>
+        </div>
+      </details>
+
+      <div class="nav__cta">
+        <a class="btn btn--sm btn--ghost" href="login.html">Log in</a>
+        <a class="btn btn--sm" href="join.html">Join</a>
+      </div>
+    </nav>
   </div>
 </header>
 
@@ -79,8 +115,9 @@
     </p>
 
     <div class="btn-row">
-      <a class="btn" href="radio.html">Turn on the radio</a>
-      <a class="btn btn--ghost" href="membership.html">Join free</a>
+      <a class="btn" href="join.html">Join as a fan</a>
+      <a class="btn btn--neon" href="for-artists.html#apply">Join as an artist</a>
+      <a class="btn btn--ghost" href="radio.html">Turn on the radio</a>
     </div>
 
     <p class="hero__meta">
@@ -88,6 +125,48 @@
       <span>Neve VR60 &middot; Studer A827</span>
       <span>1 hour from Manhattan</span>
     </p>
+  </div>
+</section>
+
+<section class="motto"><div class="wrap"><div class="motto__inner">
+  <strong>Tune2This</strong> &mdash; where decisions are made by real music industry professionals.
+</div></div></section>
+
+<!-- ==================================================== the differentiator -->
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="split">
+      <div class="reveal">
+        <p class="eyebrow eyebrow--neon">Why this is not just another platform</p>
+        <h2>We have an actual building.</h2>
+        <p class="lede mt-sm">
+          Every other music platform is software. Tune2This is software attached to a
+          working recording studio on Route 33 &mdash; a real place, with a live room, where we
+          can put artists on a stage and fans in the seats.
+        </p>
+        <p class="dim mt-sm">
+          That is the whole difference. Release parties and listening nights are not a marketing
+          idea here; they happen in a room we own. Members get in the door. Artists get the room
+          at roster rates. Nobody streaming from a server farm can offer that.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn--ghost" href="studio.html">See the room</a>
+          <a class="btn btn--ghost" href="membership.html#tipping">Live events &amp; perks</a>
+        </div>
+      </div>
+      <div class="split__media reveal">
+        <picture>
+          <source type="image/webp" sizes="(max-width: 900px) 100vw, 50vw"
+            srcset="img/city-lights-recording-studio-live-room-tracking-session-480w.webp 480w,
+                    img/city-lights-recording-studio-live-room-tracking-session-768w.webp 768w,
+                    img/city-lights-recording-studio-live-room-tracking-session-1024w.webp 1024w,
+                    img/city-lights-recording-studio-live-room-tracking-session-1440w.webp 1440w">
+          <img src="img/city-lights-recording-studio-live-room-tracking-session.jpg"
+               alt="Musicians tracking live in the cedar-lined live room at City Lights Recording Studio"
+               width="1600" height="1066" loading="lazy" decoding="async">
+        </picture>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -504,19 +583,21 @@
           </span>
         </a>
         <p class="footer-blurb">A record label, artist platform and fan club built on Route 33 in Farmingdale, New Jersey &mdash; out of a room that has been recording since 1989.</p>
+        <p class="footer-motto">&ldquo;Where decisions are made by real music industry professionals.&rdquo;</p>
         <p class="footer-note">Brought to you by City Lights Recording Studio</p>
       </div>
 
       <div>
         <p class="footer-h">Explore</p>
         <ul class="footer-list">
-            <li><a href="artists.html">Artists</a></li>
-            <li><a href="videos.html">Videos</a></li>
-            <li><a href="radio.html">Radio</a></li>
-            <li><a href="news.html">News</a></li>
-            <li><a href="studio.html">The Studio</a></li>
-            <li><a href="membership.html">Membership</a></li>            <li><a href="for-artists.html">For artists</a></li>
-            <li><a href="contact.html">Contact</a></li>
+          <li><a href="artists.html">Artists</a></li>
+          <li><a href="radio.html">Radio</a></li>
+          <li><a href="charts.html">Charts</a></li>
+          <li><a href="videos.html">Videos</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="membership.html">Membership</a></li>
+          <li><a href="for-artists.html">For artists</a></li>
+          <li><a href="join.html">Join</a> &middot; <a href="login.html">Log in</a></li>
         </ul>
       </div>
 
@@ -531,6 +612,8 @@
         </address>
         <p class="footer-h" style="margin-top:1.75rem">Follow</p>
         <ul class="footer-list footer-list--inline">
+          <li><a href="https://www.youtube.com/@guydaniel1299/videos" rel="noopener">City Lights YouTube</a></li>
+          <li><a href="https://www.youtube.com/@thegdvo2762" rel="noopener">GDVO YouTube</a></li>
           <li><a href="https://www.facebook.com/CityLightsRecordingStudio/" rel="noopener">Facebook</a></li>
           <li><a href="https://www.instagram.com/guy_daniel_city_lights/" rel="noopener">Instagram</a></li>
         </ul>
