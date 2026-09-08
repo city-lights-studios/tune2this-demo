@@ -19,6 +19,14 @@ bash build.sh
 That regenerates the root `*.html` pages from `src/*.html`. Open `index.html`, or serve the
 folder over HTTP if you want the video and embeds to behave exactly as they do live.
 
+To preview it the way it will behave live (video, embeds, player persistence):
+
+```powershell
+.\serve.ps1 -Root . -Port 8099
+```
+
+Then open http://localhost:8099. Opening `index.html` directly works too.
+
 **Edit `src/*.html`, never the generated root `.html` files** — the build overwrites them.
 Shared header, footer, nav, `<head>` and the docked player all live in `build.sh`.
 
