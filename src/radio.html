@@ -1,0 +1,128 @@
+TITLE: Radio — the Tune2This rotation | Tune2This
+DESC: The curated Tune2This rotation. Everything on it was cut at City Lights Recording Studio on Route 33.
+NAV: radio
+---
+
+<section class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">Radio</p>
+    <h1>The rotation.</h1>
+    <p class="lede">
+      Curated, not algorithmic. Press play on anything and the deck docks to the bottom of the
+      screen and follows you around the site &mdash; the queue and the playhead survive every
+      page you click.
+    </p>
+    <div class="btn-row">
+      <button class="btn" type="button"
+              data-track-play="gdvo-peace-philly-funk"
+              data-track-queue="gdvo-peace-philly-funk,gdvo-peace-original">Play the rotation</button>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="stripe"></div></div>
+
+<section class="section">
+  <div class="wrap">
+    <p class="eyebrow reveal">In rotation now</p>
+    <ol class="tracklist reveal">
+      <li class="track" data-track-row="gdvo-peace-philly-funk">
+        <button class="track__play" type="button"
+                data-track-play="gdvo-peace-philly-funk"
+                data-track-queue="gdvo-peace-philly-funk,gdvo-peace-original"
+                aria-label="Play Peace (The Instant Philly Funk Mix)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7L8 5z" fill="currentColor"/></svg>
+        </button>
+        <span class="track__name">
+          Peace (The Instant Philly Funk Mix)
+          <span class="track__by">The GDVO &middot; R&amp;B / Soul &middot; 2025</span>
+        </span>
+        <span class="track__meta"><span class="track__len">3:00</span><span class="track__price">$0.99</span></span>
+      </li>
+      <li class="track" data-track-row="gdvo-peace-original">
+        <button class="track__play" type="button"
+                data-track-play="gdvo-peace-original"
+                data-track-queue="gdvo-peace-philly-funk,gdvo-peace-original"
+                aria-label="Play Peace featuring The Chi-Lites and Denroy Morgan">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7L8 5z" fill="currentColor"/></svg>
+        </button>
+        <span class="track__name">
+          Peace <span class="faint">(feat. The Chi-Lites &amp; Denroy Morgan)</span>
+          <span class="track__by">The GDVO &middot; R&amp;B / Soul &middot; 2021</span>
+        </span>
+        <span class="track__meta"><span class="track__len">3:51</span><span class="track__price">$0.99</span></span>
+      </li>
+    </ol>
+
+    <p class="eyebrow mt-lg reveal">Waiting on masters</p>
+    <ol class="tracklist reveal">
+      <li class="track" style="opacity:.5">
+        <span class="track__play" aria-hidden="true" style="cursor:default">
+          <svg viewBox="0 0 24 24"><path d="M12 6v12M6 12h12" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+        </span>
+        <span class="track__name">Rotation slot 03<span class="track__by">Roster artist &middot; master, artwork and split sheet needed</span></span>
+        <span class="track__meta"><span class="faint">Empty</span></span>
+      </li>
+      <li class="track" style="opacity:.5">
+        <span class="track__play" aria-hidden="true" style="cursor:default">
+          <svg viewBox="0 0 24 24"><path d="M12 6v12M6 12h12" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+        </span>
+        <span class="track__name">Rotation slot 04<span class="track__by">Roster artist &middot; master, artwork and split sheet needed</span></span>
+        <span class="track__meta"><span class="faint">Empty</span></span>
+      </li>
+      <li class="track" style="opacity:.5">
+        <span class="track__play" aria-hidden="true" style="cursor:default">
+          <svg viewBox="0 0 24 24"><path d="M12 6v12M6 12h12" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+        </span>
+        <span class="track__name">Rotation slot 05<span class="track__by">City Lights session cut &middot; clearance needed from the artist</span></span>
+        <span class="track__meta"><span class="faint">Empty</span></span>
+      </li>
+      <li class="track" style="opacity:.5">
+        <span class="track__play" aria-hidden="true" style="cursor:default">
+          <svg viewBox="0 0 24 24"><path d="M12 6v12M6 12h12" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+        </span>
+        <span class="track__name">Rotation slot 06<span class="track__by">Roster artist &middot; master, artwork and split sheet needed</span></span>
+        <span class="track__meta"><span class="faint">Empty</span></span>
+      </li>
+    </ol>
+
+    <div class="note mt-lg reveal">
+      <strong>How the deck works in this demo</strong>
+      We hold no licensed masters, so the docked deck runs a real transport against each track&rsquo;s
+      true running time and hands off to the rights holder&rsquo;s own Spotify or YouTube player for
+      actual audio. Drop an MP3 URL into the <code>audio</code> field in
+      <code>data/catalog.js</code> and the same deck streams it instead &mdash; nothing else changes.
+      Continuous audio <em>across</em> a page load needs a single-page shell; that trade-off is
+      written up in the README.
+    </div>
+  </div>
+</section>
+
+<section class="section section--raise section--line">
+  <div class="wrap">
+    <div class="split">
+      <div class="split__media reveal">
+        <picture>
+          <source type="image/webp" sizes="(max-width: 900px) 100vw, 50vw"
+            srcset="img/city-lights-recording-studio-neve-vr60-meter-bridge-monitors-480w.webp 480w,
+                    img/city-lights-recording-studio-neve-vr60-meter-bridge-monitors-768w.webp 768w,
+                    img/city-lights-recording-studio-neve-vr60-meter-bridge-monitors-1024w.webp 1024w">
+          <img src="img/city-lights-recording-studio-neve-vr60-meter-bridge-monitors.jpg"
+               alt="Neve VR60 meter bridge and studio monitors at City Lights Recording Studio"
+               width="1024" height="768" loading="lazy" decoding="async">
+        </picture>
+      </div>
+      <div class="reveal">
+        <p class="eyebrow">Programming</p>
+        <h2>Someone picks these.</h2>
+        <p class="lede mt-sm">
+          The rotation is programmed from the control room, the way a station is. Members hear
+          new additions a week before they go into public rotation.
+        </p>
+        <div class="btn-row">
+          <a class="btn" href="membership.html">Hear it first — from $5</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
