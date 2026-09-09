@@ -246,6 +246,7 @@ HEAD
   </div>
 </div>
 
+<script src="data/config.js"></script>
 <script src="data/catalog.js"></script>
 <script src="assets/player.js"></script>
 <script src="assets/site.js"></script>

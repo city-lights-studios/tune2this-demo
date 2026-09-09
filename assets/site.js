@@ -99,7 +99,50 @@
     });
   }
 
-  /* ---- demo forms have no backend ---- */
+  /* ---- intake forms: real delivery (Phase 0) ----
+     Uses T2T_CONFIG.formEndpoint when set; otherwise falls back to mailto so
+     the form still does something today. Login forms (data-demo-form) stay
+     inert — we never email a password. */
+  var cfg = window.T2T_CONFIG || {};
+  function t2tSerialize(form) {
+    var o = {}; new FormData(form).forEach(function (v, k) { o[k] = v; }); return o;
+  }
+  function t2tMsg(form, text) {
+    var out = form.querySelector('[data-demo-form-message]');
+    if (!out) return;
+    out.textContent = text; out.hidden = false;
+    out.setAttribute('tabindex', '-1'); out.focus();
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('form[data-lead-form]'), function (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var label = form.getAttribute('data-lead-form') || 'Website form';
+      var data = t2tSerialize(form);
+      if (cfg.formEndpoint) {
+        var payload = Object.assign({ _subject: 'Tune2This — ' + label, form: label }, data);
+        if (cfg.formService === 'web3forms') payload.access_key = cfg.web3formsKey;
+        t2tMsg(form, 'Sending…');
+        fetch(cfg.formEndpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(payload)
+        }).then(function (r) {
+          if (r.ok) { t2tMsg(form, 'Thanks — your message was sent. We’ll be in touch.'); form.reset(); }
+          else { t2tMsg(form, 'Sorry, that didn’t go through. Please email ' + (cfg.contactEmail || '') + '.'); }
+        }).catch(function () {
+          t2tMsg(form, 'Sorry, that didn’t go through. Please email ' + (cfg.contactEmail || '') + '.');
+        });
+      } else {
+        var to = cfg.contactEmail || '';
+        var body = Object.keys(data).map(function (k) { return k + ': ' + data[k]; }).join('\n');
+        window.location.href = 'mailto:' + to + '?subject=' +
+          encodeURIComponent('Tune2This — ' + label) + '&body=' + encodeURIComponent(body);
+        t2tMsg(form, 'Your email app should open with the message ready to send.');
+      }
+    });
+  });
+
+  /* ---- login forms stay inert until real accounts exist (Phase 1) ---- */
   Array.prototype.forEach.call(document.querySelectorAll('form[data-demo-form]'), function (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
