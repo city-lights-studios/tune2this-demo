@@ -17,7 +17,7 @@ cd "$(dirname "$0")"
 SITE_NAME="Tune2This"
 SITE_MOTTO="Where decisions are made by real music industry professionals"
 SITE_TAG="Brought to you by City Lights Recording Studio"
-SITE_URL="https://teknowmusic.github.io/tune2this-demo"
+SITE_URL="https://tune2this.com"
 
 CL_YT="https://www.youtube.com/@guydaniel1299/videos"
 GDVO_YT="https://www.youtube.com/@thegdvo2762"
