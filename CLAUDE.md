@@ -31,24 +31,18 @@ invented.
 
 ## How it's hosted / deployed (important, not derivable from the code)
 
-- **Repo:** `github.com/teknowmusic/tune2this-demo` (public), branch `main`.
-- **Host:** **Cloudflare Pages**, project `tune2this-demo`, on Jose's Cloudflare
-  account. **Auto-deploys on every push to `main`.**
-- **Immediate URL:** https://tune2this-demo.pages.dev (always live).
+- **Repo:** `github.com/city-lights-studios/tune2this-demo` (public), branch `main`.
+  Jose (`teknowmusic`) is a collaborator with write access.
+- **Host:** **Cloudflare Pages**, project `tune2this`, on Guy's Cloudflare
+  account (`citylightsrecordingstudio@gmail.com`). **Auto-deploys on every push to `main`.**
+- **Immediate URL:** https://tune2this.pages.dev (always live).
 - **Primary domain:** https://tune2this.com (+ www) — registered to Guy at
-  **GoDaddy**, DNS moved to Cloudflare nameservers (`braelyn` / `nero.ns.cloudflare.com`).
-  Also mirrored at https://teknowmusic.github.io/tune2this-demo (GitHub Pages, harmless).
-- **Auth on this machine:** GitHub CLI is installed and logged in as `teknowmusic`;
-  git pushes work without prompting.
+  **GoDaddy**, DNS on Guy's Cloudflare (nameservers `buck` / `mary.ns.cloudflare.com`).
+- **Auth on Guy's Mac:** GitHub CLI at `~/bin/gh`, logged in as `city-lights-studios`;
+  git pushes work without prompting. (Guy's Mac is macOS, not Windows.)
 
-> **HANDOFF WARNING:** the repo, the Cloudflare project, and the GitHub login all
-> sit under **Jose's** accounts. If work moves to **Guy's** machine/Claude, decide
-> first: add Guy as a repo collaborator, transfer the repo, and/or move the
-> Cloudflare Pages project — otherwise Guy's Claude can read the code but cannot
-> push or deploy. Don't assume push access.
->
-> **The step-by-step move to Guy's accounts (GitHub `city-lights-studios`, Guy's
-> Cloudflare) is in `HANDOFF.md`.** Follow it in order.
+The move from Jose's accounts to Guy's was completed in October 2026; the
+runbook is kept in `HANDOFF.md` for reference.
 
 ---
 
@@ -163,9 +157,9 @@ agreement, sales-tax handling, and the trademark decision below.
 
 ## Accounts & links quick reference
 
-- Repo: https://github.com/teknowmusic/tune2this-demo
-- Live: https://tune2this.com · https://tune2this-demo.pages.dev
+- Repo: https://github.com/city-lights-studios/tune2this-demo
+- Live: https://tune2this.com · https://tune2this.pages.dev
 - GDVO: Spotify/Apple/YouTube (@thegdvo2762) · City Lights YouTube (@guydaniel1299)
   · Facebook facebook.com/CityLightsRecordingStudio · IG @guy_daniel_city_lights
-- Cloudflare Pages project: `tune2this-demo` (account Jperezmusic@gmail.com)
+- Cloudflare Pages project: `tune2this` (account citylightsrecordingstudio@gmail.com)
 - Registrar: GoDaddy (domain owner: Guy Vastola)
