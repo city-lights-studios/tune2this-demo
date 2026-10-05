@@ -15,7 +15,7 @@ window.T2T_CONFIG = {
   contactEmail: "CityLightsRecordingStudio@gmail.com",
 
   // Formspree: create a form, paste its endpoint, e.g. "https://formspree.io/f/abcdwxyz"
-  formEndpoint: "",
+  formEndpoint: "https://formspree.io/f/mzedbnvl",
   formService: "formspree",   // "formspree" | "web3forms"
   web3formsKey: ""            // only if formService === "web3forms"
 };
