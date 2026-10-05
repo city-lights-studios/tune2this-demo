@@ -85,7 +85,7 @@ PHASE-0.md          the actionable "make it testable" checklist
   transport and hands off to the rights holder's player for full listening.
 
 **Remaining Phase 0 steps are in `PHASE-0.md`** (they need Jose/Guy's accounts:
-a Formspree endpoint and a store + rights decision).
+a store + rights decision; the Formspree endpoint is live as of Oct 2026).
 
 ---
 

@@ -5,7 +5,7 @@ page). What's left needs Jose/Guy's own accounts and one rights decision.
 
 ---
 
-## A. Turn on real form delivery (Formspree)
+## A. Turn on real form delivery (Formspree) — DONE Oct 2026 (form mzedbnvl, Guy's Formspree)
 
 1. Go to **formspree.io** and sign up (free tier = 50 submissions/month).
 2. Create a new form; set the destination email
