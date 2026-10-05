@@ -46,6 +46,9 @@ invented.
 > first: add Guy as a repo collaborator, transfer the repo, and/or move the
 > Cloudflare Pages project — otherwise Guy's Claude can read the code but cannot
 > push or deploy. Don't assume push access.
+>
+> **The step-by-step move to Guy's accounts (GitHub `city-lights-studios`, Guy's
+> Cloudflare) is in `HANDOFF.md`.** Follow it in order.
 
 ---
 
