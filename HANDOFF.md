@@ -19,7 +19,7 @@ his laptop.
 | Piece | Now (Jose) | Target (Guy) |
 |---|---|---|
 | Code | `github.com/teknowmusic/tune2this-demo` | `github.com/city-lights-studios/tune2this-demo` |
-| Hosting | Cloudflare Pages project `tune2this-demo` on Jose's Cloudflare | New Pages project on Guy's Cloudflare (`citylightsrecording@gmail.com`) |
+| Hosting | Cloudflare Pages project `tune2this-demo` on Jose's Cloudflare | New Pages project on Guy's Cloudflare (`citylightsrecordingstudio@gmail.com`) |
 | DNS for tune2this.com | Zone on Jose's Cloudflare (nameservers `braelyn` / `nero.ns.cloudflare.com`) | Zone on Guy's Cloudflare (its own nameserver pair) |
 | Domain registration | GoDaddy, already Guy's | No change |
 | Jose's access | Owner | Collaborator on GitHub (optional member on Cloudflare) |
@@ -64,7 +64,7 @@ That's expected.
    (Jose accepts the invite on his side.)
 
 ### Step 3: Create Guy's Cloudflare Pages project
-*Browser on Guy's laptop, logged into Cloudflare as `citylightsrecording@gmail.com`.*
+*Browser on Guy's laptop, logged into Cloudflare as `citylightsrecordingstudio@gmail.com`.*
 
 1. Compute → **Workers & Pages** → Create → **Pages** → **Import an existing Git repository**.
 2. **Connect GitHub.** This opens GitHub to install "Cloudflare Workers and Pages".
@@ -126,7 +126,7 @@ which is why Step 7 comes last.
 
 1. Edit `CLAUDE.md`: in **How it's hosted / deployed**, change the repo to
    `city-lights-studios/tune2this-demo`, the Cloudflare account to
-   `citylightsrecording@gmail.com`, the project name and `.pages.dev` address to the
+   `citylightsrecordingstudio@gmail.com`, the project name and `.pages.dev` address to the
    new ones, and the nameservers to Guy's pair. Remove the "HANDOFF WARNING" box.
    Also update the "Accounts & links" section at the bottom.
 2. `bash build.sh`, then commit and push:
